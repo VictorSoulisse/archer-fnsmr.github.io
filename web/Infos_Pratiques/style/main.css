@@ -1,0 +1,269 @@
+/* ===================================================== */
+/* ===================== CARTES ======================= */
+/* ===================================================== */
+
+/* ===== Large Card ===== */
+.large-card {
+  background-color: #ffffff;         /* Fond blanc */
+  border: 1px solid #93c5fd;         /* Bordure bleu clair */
+  border-radius: 14px;               /* Coins arrondis */
+  padding: 24px;                     /* Espace interne */
+  margin: 16px;                      /* Espace extérieur */
+  display: flex;                     
+  flex-direction: column;            /* Empile verticalement les enfants */
+  gap: 16px;                         /* Espace entre les éléments */
+  width: calc(100% - 32px);          /* Prend toute la largeur moins les marges */
+  box-sizing: border-box;            /* Inclut padding et border dans la largeur */
+}
+
+/* Titre à l'intérieur des cartes */
+.large-card h3, 
+.large-card h4 {
+  font-size: 20px;                   /* Taille du titre */
+  font-weight: 500;                  /* Medium weight */
+  margin: 0;                         /* Supprime margin par défaut */
+}
+
+/* Texte normal dans les cartes */
+.large-card p {
+  font-size: 16px;                   /* Taille texte normal */
+  font-weight: 400;                  /* Regular */
+  line-height: 1.5;                  /* Hauteur de ligne confortable */
+  margin: 0;                         /* Supprime margin par défaut */
+}
+
+
+/* ===================================================== */
+/* ================= PAGE INFO PRATIQUE ================= */
+/* ===================================================== */
+
+/* Section générale */
+.info-section {
+  padding: 16px;                     /* Espace autour de la section */
+}
+
+/* -------- Bloc d'information (lieu / tel / mail) -------- */
+.info-block {
+  margin-bottom: 20px;               /* Espace entre les blocs */
+}
+
+/* Titre interne (ex: Centre sportif, Téléphone, Email) */
+.info-block h4 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+/* Texte normal */
+.info-block p {
+  margin: 0 0 4px 0;
+  font-size: 15px;
+}
+
+/* Lien carte interactive ou email */
+.info-block a {
+  font-size: 14px;
+  color: #2563eb;
+  text-decoration: none;             /* Retire soulignement */
+}
+
+
+/* ===================================================== */
+/* ========= ALIGNEMENT TELEPHONE / EMAIL ============== */
+/* ===================================================== */
+
+/* Par défaut (mobile) → en colonne */
+.contact-row {
+  display: flex;
+  flex-direction: column;            /* L'un en dessous de l'autre */
+  gap: 20px;                         /* Espace entre les blocs */
+}
+
+/* -------- Version grand écran -------- */
+@media (min-width: 1024px) {
+  .contact-row {
+    flex-direction: row;             /* CÔTE À CÔTE */
+    justify-content: space-between;  /* Espacement horizontal */
+  }
+  .contact-row .info-block {
+    width: 48%;                      /* Chaque bloc prend presque la moitié */
+  }
+}
+
+
+/* ===================================================== */
+/* =============== AGRANDIR LA CARTE =================== */
+/* ===================================================== */
+
+/* Carte plus grande sur grand écran */
+@media (min-width: 1024px) {
+  .map-container iframe {
+    height: 500px;                   /* Plus haute qu'avant */
+  }
+}
+
+
+/* ===================================================== */
+/* ======== SECTION INFO : ACCÈS ET STATIONNEMENT ===== */
+/* ===================================================== */
+
+/* Carte principale pour plan / parking */
+.info-section .large-card {
+  background-color: #ffffff;         /* Fond blanc */
+  border: 1px solid #93c5fd;        /* Bordure bleue claire */
+  border-radius: 14px;               /* Coins arrondis */
+  padding: 24px;                     /* Padding interne */
+  margin: 16px;                      /* Espace extérieur */
+  display: flex;                     
+  flex-direction: column;            /* Empile verticalement */
+  gap: 16px;                         /* Espace entre les enfants */
+  box-sizing: border-box;            
+  width: calc(100% - 32px);          /* Prend toute la largeur moins les marges */
+}
+
+/* Titre de la carte (ex: Accès et stationnement) */
+.info-section .large-card h3 {
+  font-size: 20px;                   /* Taille titre */
+  font-weight: 500;                  /* Medium weight */
+  margin: 0;                         /* Supprime margin par défaut */
+}
+
+/* Image du plan / parking */
+.info-section .info-image {
+  width: 100%;                       /* Prend toute la largeur de la carte */
+  height: auto;                      /* Conserve les proportions */
+  border-radius: 10px;               /* Coins légèrement arrondis */
+}
+
+/* ----------- Version grand écran ----------- */
+@media (min-width: 1024px) {
+  .info-section .info-image {
+    max-height: 400px;               /* Limite la hauteur pour grand écran */
+    object-fit: cover;               /* Recadrage si nécessaire */
+  }
+}
+
+
+/* ===================================================== */
+/* ================== PETITE CARTE ==================== */
+/* ===================================================== */
+
+/* Conteneur petite carte */
+.small-card {
+  background-color: #f9fafb;           /* Fond légèrement gris */
+  border: 1px solid #93c5fd;           /* Bordure bleu clair */
+  border-radius: 12px;                  /* Coins arrondis */
+  padding: 16px;                        /* Espace interne */
+  display: flex;                        
+  flex-direction: column;               /* Empile les éléments verticalement */
+  gap: 8px;                             /* Espace entre les éléments */
+  transition: transform 0.2s ease;      /* Animation au survol */
+}
+
+/* Hover effet léger */
+.small-card:hover {
+  transform: translateY(-4px);          /* Légère remontée au survol */
+}
+
+/* Titre de la petite carte */
+.small-card h4 {
+  font-size: 16px;                      /* Taille titre */
+  font-weight: 500;                     /* Medium weight */
+  margin: 0;                            /* Supprime margin par défaut */
+}
+
+/* Texte normal à l'intérieur */
+.small-card p {
+  font-size: 14px;                      /* Taille texte normal */
+  font-weight: 400;                     /* Regular */
+  margin: 0;                            /* Supprime margin par défaut */
+}
+
+
+/* ===================================================== */
+/* ============ PETITES CARTES SCROLLABLES ============ */
+/* ===================================================== */
+
+/* Conteneur scrollable pour les small-card */
+.large-card .scrollable-cards {
+  display: flex;
+  flex-direction: column;     /* empile verticalement */
+  gap: 12px;                  /* espace entre cartes */
+  max-height: 360px;          /* hauteur fixe pour 3-4 cartes visibles */
+  overflow-y: auto;           /* scroll vertical si dépassement */
+  padding-right: 4px;         /* éviter que le scroll cache le contenu */
+}
+
+/* Scrollbar custom (optionnel) */
+.large-card .scrollable-cards::-webkit-scrollbar {
+  width: 6px;
+}
+
+.large-card .scrollable-cards::-webkit-scrollbar-thumb {
+  background-color: #93c5fd;
+  border-radius: 3px;
+}
+
+.large-card .scrollable-cards::-webkit-scrollbar-track {
+  background-color: #f0f4f8;
+}
+
+
+/* ===================================================== */
+/* ================== MENU ACCORDÉON ================== */
+/* ===================================================== */
+
+/* Conteneur principal de l'accordéon */
+.accordion {
+  width: 100%;             /* prend toute la largeur du parent */
+  max-width: 800px;        /* largeur max pour grand écran */
+  margin: 0 auto;          /* centré horizontalement */
+}
+
+/* ===== BOUTONS ===== */
+/* Bouton qui ouvre/ferme chaque section */
+.accordion-button {
+  width: 100%;             /* prend toute la largeur */
+  background-color: #ffffff; /* fond blanc */
+  border: 1px solid #93c5fd; /* bordure bleu clair */
+  border-radius: 10px;      /* coins arrondis */
+  padding: 16px;            /* espace interne */
+  font-size: 16px;          /* taille texte du bouton */
+  font-weight: 500;         /* medium */
+  text-align: left;         /* texte aligné à gauche */
+  cursor: pointer;          /* pointeur souris */
+  position: relative;       /* pour le + */
+  display: flex;
+  justify-content: space-between; /* texte à gauche, + à droite */
+  align-items: center;
+  transition: background 0.3s ease; /* transition sur ouverture */
+}
+
+/* + qui indique état fermé/ouvert */
+.accordion-button::after {
+  content: ">";            /* symbole par défaut */
+  font-weight: bold;
+  transition: transform 0.3s ease; /* rotation fluide */
+}
+
+/* Bouton actif (ouvert) → + tourne */
+.accordion-button.active::after {
+  transform: rotate(90deg); /* rotation pour croix */
+}
+
+/* ===== CONTENU ===== */
+.accordion-content {
+  max-height: 0;             /* caché par défaut */
+  overflow: hidden;          /* éviter dépassement */
+  transition: max-height 0.4s ease; /* ouverture fluide */
+  padding: 0 16px;           /* padding latéral */
+  box-sizing: border-box;    /* inclut padding dans largeur */
+  margin-bottom: 16px;       /* espace entre sections */
+}
+
+/* Texte interne du contenu */
+.accordion-content p {
+  margin: 8px 0;             /* espace entre lignes */
+  font-size: 15px;           /* taille du texte */
+  line-height: 1.5;          /* hauteur de ligne confortable */
+}
